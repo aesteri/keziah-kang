@@ -2,7 +2,7 @@
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
 
-import butterfly from '@/assets/butterfly.svg';
+
 import christine from '@/assets/christine.jpg';
 import christine1 from '@/assets/christine1.jpg';
 import hanbok from '@/assets/hanbok.jpg';
@@ -12,33 +12,38 @@ import star from '@/assets/star.svg';
 import face from '@/assets/face.png';
 import { Image } from 'astro:assets';
 
+
+import keziah from '@/assets/keziah.jpg';
+import keziah1 from '@/assets/keziah1.jpg';
+import keziah2 from '@/assets/keziah2.jpg';
+import keziah3 from '@/assets/keziah3.jpg';
+import leaf from '@/assets/leaf.svg';
+import butterfly from '@/assets/butterfly.svg';
+import daisy from '@/assets/daisy.svg';
 ---
 <div>
   <sl-card class="card-overview">
 
     <Image
       slot="image"
-      src={christine}
+      src={keziah2}
       loading="eager"
       style={{ width: '250', height: 'auto' }}
       alt="A kitten sits patiently between a terracotta pot and decorative grasses."
     />
   
-    <strong>Christine Kim</strong><br />
-    Korean American student at the Georgia Institute of Technology.<br />
-    <small>Current SpaceX Intern</small>
+    <strong>Keziah Kang</strong><br />
+    Loving mom of 3, Technician, Pastor<br />
+    <small>Daughter of God</small>
   
     <div slot="footer">
-      <sl-avatar label="User avatar" image={face.src}></sl-avatar>
+      <sl-avatar label="User avatar" image={keziah1.src}></sl-avatar>
       <div>
-        <sl-animation name="flip" duration="2000" play>
-            <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon>
-        </sl-animation>
+       
         <sl-icon-button id="outlink" name="youtube" label="Visit my YouTube channel"></sl-icon-button>
-        <sl-icon-button id="outlink" name="github" href="https://github.com/aesteri" target="_blank" label="Visit my GitHub profile"></sl-icon-button>
-        <sl-icon-button id="outlink" name="linkedin" href="https://linkedin.com/in/christine-yewonkim" target="_blank" label="Visit my LinkedIn profile"></sl-icon-button>
+        <sl-icon-button id="outlink"name="envelope" href="mailto:keziahkang@gmail.com" target="_blank" label="Send me an email"></sl-icon-button>
         <sl-animation name="flip" duration="2000" play>
-            <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon>
+            <sl-icon src={daisy.src}></sl-icon>
         </sl-animation>
       </div>
     </div>
@@ -55,7 +60,7 @@ import { Image } from 'astro:assets';
     color: var(--sl-color-neutral-500);
   }
   #outlink::part(base):hover {
-      color: var(--sl-color-orange-300);
+      color: var(--sl-color-success-300);
 
   }
   .card-overview [slot='footer'] {

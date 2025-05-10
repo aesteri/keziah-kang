@@ -4,6 +4,8 @@ import path from 'path';
 import matter from 'gray-matter';
 import Layout from '@/layouts/Layout.astro';
 import NoFooter from "@/layouts/NoFooter.astro";
+import { Image } from 'astro:assets';
+import daisy from '@/assets/daisy.svg';
 const projectsDirectory = path.resolve('./src/content/projects');
 const files = fs.readdirSync(projectsDirectory);
 
@@ -11,9 +13,9 @@ const projects = files.map((file) => {
   const filePath = path.join(projectsDirectory, file);
   const content = fs.readFileSync(filePath, 'utf-8');
   
-  const { data: { title, description, link, date, tags } } = matter(content);
+  const { data: { title, description, date, tags, image} } = matter(content);
   const parsedDate = new Date(date);
-  return { title, description, link, date: parsedDate, tags };
+  return { title, description, date: parsedDate, tags, image};
 });
 
 projects.sort((a, b) => b.date.getTime() - a.date.getTime());
@@ -22,16 +24,31 @@ projects.sort((a, b) => b.date.getTime() - a.date.getTime());
 <NoFooter>
   <div id="project-container">
     <div id="project-wrapper">
-      <h1>My Projects</h1>
+      <h1>My Gallery</h1>
       <div class="projects-list">
 
         {projects.map((project) => (
             <sl-card class="card-header">
               <div slot="header">
                   {project.title}
-                  <sl-icon-button name="stars" href={project.link} target="_blank" label="Settings"></sl-icon-button>
+                  <sl-animation name="flip" duration="2000" play>
+                    <sl-icon-button src={daisy.src} target="_blank" label="Settings"></sl-icon-button>
+                  </sl-animation>
               </div>
-
+              <Image
+                        slot="image"
+                        format="avif"
+                        quality={100}
+                        loading="eager"
+                        decoding="async"
+                        loading={"eager"}
+                        sizes="20px"
+                        style={{ width: '250', height: 'auto' }}
+                        densities={[1, 2]}
+                        inferSize={true}
+                        src={project.image.url}
+                        alt={project.image.alt}
+                    />
               {project.description}
               
               <small>{project.date.toLocaleDateString()}</small>
@@ -85,18 +102,12 @@ projects.sort((a, b) => b.date.getTime() - a.date.getTime());
     justify-content: space-between;
   }
   sl-badge::part(base)  {
-    background-color: var(--sl-color-orange-400);
+    background-color: var(--sl-color-success-400);
   }
   .card-header h3 {
     margin: 0;
   }
-  .card-header sl-icon-button {
-    font-size: var(--sl-font-size-medium);
-    color: var(--sl-color-orange-300);
-  }
-  .card-header sl-icon-button::part(base):hover  {
-    color: var(--sl-color-orange-100);
-  }
+  
   @media screen and (min-width: 1536px) {
     .projects-list{
       grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));

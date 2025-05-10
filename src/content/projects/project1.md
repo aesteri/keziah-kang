@@ -1,15 +1,10 @@
 ---
-title: "Personal Website"
-description: "Fast, accessible personal website for blogs and portfolio material"
-link: "https://github.com/aesteri/v2_aesteri"
+title: "My mother and I"
+description: "@ New York"
 date: "2025-05-07"
-tags: [ "Astro", "Shoelace", "HTML", "CSS"]
-
+tags: [ "New York"]
+image:
+    url: 'https://raw.githubusercontent.com/aesteri/keziah-kang/refs/heads/main/src/assets/christine4.png'
+    alt: 'Mother'
 ---
 
-Designed and deployed a fast, accessible personal website using Astro and the Shoelace UI library, emphasizing a clean and modern user experience
-
-## Features
-- Blog
-- Feature 2
-- Feature 3

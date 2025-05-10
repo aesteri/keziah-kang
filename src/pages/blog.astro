@@ -2,7 +2,7 @@
 import Layout from "@/layouts/Layout.astro";
 import NoFooter from "@/layouts/NoFooter.astro";
 import { Image } from "astro:assets";
-
+import daisy from '@/assets/daisy.svg';
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 
@@ -33,7 +33,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
                             <div slot="header">
                                 {post.frontmatter.title}
                                 <sl-animation name="flip" duration="2000" play>
-                                <sl-icon-button src="/v2_aesteri/favicon.svg" label="Settings" href={post.url}></sl-icon-button>
+                                <sl-icon-button src={daisy.src} label="Settings" href={post.url}></sl-icon-button>
                                 </sl-animation>
                             </div>
                         
@@ -55,7 +55,7 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 
 <style>
     sl-badge::part(base)  {
-        background-color: var(--sl-color-orange-400);
+        background-color: var(--sl-color-success-400);
     }
     h1 {
         text-align: center;
@@ -104,10 +104,10 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 
     .card-overview sl-icon-button {
         font-size: var(--sl-font-size-medium);
-        color: var(--sl-color-orange-300);
+        color: var(--sl-color-success-300);
     }
     .card-overview sl-icon-button::part(base):hover  {
-        color: var(--sl-color-orange-100);
+        color: var(--sl-color-success-100);
     }
     @media screen and (min-width: 1536px) {
         .posts-list{

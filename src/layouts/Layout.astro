@@ -2,13 +2,15 @@
 import Nav from "@/components/Nav.astro"
 import "@shoelace-style/shoelace/dist/themes/light.css";
 import butterfly from '@/assets/butterfly.svg';
-
+import flowerblack from '@/assets/flowerblack.svg';
+import plant1 from '@/assets/plant1.svg';
+import plant2 from '@/assets/plant2.svg';
 ---
 <script>
 	// Shoelace imports
 	import '@shoelace-style/shoelace';
 	import { setBasePath } from '@shoelace-style/shoelace/dist/utilities/base-path.js';
-	setBasePath('/v2_aesteri/shoelace-assets/');
+	setBasePath('/keziah-kang/shoelace-assets/');
 </script>
 
 <!doctype html>
@@ -20,9 +22,9 @@ import butterfly from '@/assets/butterfly.svg';
 		
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/v2_aesteri/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/keziah-kang/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Christine Kim</title>
+		<title>Keziah Kang</title>
         <meta name="description" content="a personal website" />
 	</head>
 	<body>
@@ -31,11 +33,11 @@ import butterfly from '@/assets/butterfly.svg';
 			<slot />
 		</main>
 		<footer>
-			<sl-icon src={butterfly.src}></sl-icon> 
-			<sl-icon-button id="outlink"name="envelope" href="mailto:christine.yewon.kim@gmail.com" target="_blank" label="Send me an email"></sl-icon-button>
-			<sl-icon src={butterfly.src}></sl-icon> 
+			<sl-icon src={plant1.src}></sl-icon> 
+			<sl-icon-button id="outlink"name="envelope" href="mailto:keziahkang@gmail.com" target="_blank" label="Send me an email"></sl-icon-button>
+			<sl-icon src={plant2.src}></sl-icon> 
 			<p>
-				© 2025 Christine Kim. All Rights Reserved.
+				© 2025 Christine Kim & Keziah Kang. All Rights Reserved.
 			</p>
 		</footer>
 	</body>
@@ -47,7 +49,7 @@ import butterfly from '@/assets/butterfly.svg';
 		font-family: 'Patrick Hand SC', sans-serif;
 	}
 	sl-icon-button::part(base):hover {
-		color: var(--sl-color-orange-200);
+		color: var(--sl-color-success-200);
 	}
 	html,
 	body {

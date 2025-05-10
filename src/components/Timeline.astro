@@ -1,31 +1,38 @@
 ---
 import butterfly from '@/assets/butterfly.svg';
-
+import leaf from '@/assets/leaf.svg';
+import daisy from '@/assets/daisy.svg';
 ---
 
 <div class="timeline-container">
     
     <sl-tab-group id="info-container" >
         <sl-tab slot="nav" panel="general" label="General tab">General</sl-tab>
-        <sl-tab slot="nav" panel="custom" label="Gilman tab">Gilman Program</sl-tab>
-        <sl-tab slot="nav" panel="advanced" label="FSAE tab">FSAE EV</sl-tab>
-        <sl-tab slot="nav" panel="asian" label="AAPI tab">AAPI</sl-tab>
+        <sl-tab slot="nav" panel="faith" label="faith tab">Faith</sl-tab>
+        <sl-tab slot="nav" panel="baking" label="baking tab">Baking</sl-tab>
+        <sl-tab slot="nav" panel="garden" label="garden tab">Garden</sl-tab>
       
-        <sl-tab-panel name="general">Christine serves as the Data Operations Lead for Hytech Racing and contributes to the software of the car. In 2024, she was the acceleration driver for HyTech Racing at FSAE electric, breaking the North American record for fastest FSAE electric acceleration time with a time of 3.642 seconds(75 meters). She is currently interning at SpaceX. </sl-tab-panel>
-        <sl-tab-panel name="custom">In 2024, Christine was selected by the U.S. Department of State as a U.S. representative to study abroad at South Korea’s number one university, Seoul National University. There she studied AI and Machine Learning.</sl-tab-panel>
-        <sl-tab-panel name="advanced">At the 2024 Formula SAE Electric international competition, HyTech Racing managed to establish themselves as North America’s fastest team. Christine was one of the two acceleration drivers of the competition, breaking the North American record for acceleration. </sl-tab-panel>
-        <sl-tab-panel name="asian">
-            For her efforts to promote Asian American rights in the GA-ATL community, Christine was awarded as a Korean American Chamber of Commerce GA-ATL Scholar, KIA - Korean American Scholar Foundation Scholar, KIA - Korean American Scholar Foundation Scholar , and Korean American Chamber of Commerce GA-ATL Scholar from 2021 - 2023.
+        <sl-tab-panel name="general"> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </sl-tab-panel>
+        <sl-tab-panel name="faith">
+             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </sl-tab-panel>
+        <sl-tab-panel name="baking">
+            Lorem ipsum dolor sit amet, conse. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </sl-tab-panel>
+        <sl-tab-panel name="garden">
+           Lorem ipsum dolinim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </sl-tab-panel>
     </sl-tab-group>
 
     <div id="academic-container">
-        <sl-details summary="Education">
+        <sl-details summary="Faith">
             <div id="divider">
-                <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon> <br>
+                <sl-icon src={daisy.src}></sl-icon> <br>
             </div>
-            <sl-icon slot="expand-icon" src={butterfly.src}></sl-icon>
-            <sl-icon slot="collapse-icon" src={butterfly.src}></sl-icon>
+            <sl-icon slot="expand-icon" src={leaf.src}></sl-icon>
+            <sl-icon slot="collapse-icon" src={leaf.src}></sl-icon>
             <strong>Georgia Institute of Technology | 2023 - 2027 </strong>
             <p>Bachelor of Science in Computer Science</p>
             <ul>
@@ -45,12 +52,12 @@ import butterfly from '@/assets/butterfly.svg';
     </div>
 
     <div id="experience-container">
-        <sl-details summary="Experience">
+        <sl-details summary="Baking">
             <div id="divider">
-                <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon> <br>
+                <sl-icon src={daisy.src}></sl-icon> <br>
             </div>
-            <sl-icon slot="expand-icon" src={butterfly.src}></sl-icon>
-            <sl-icon slot="collapse-icon" src={butterfly.src}></sl-icon>
+            <sl-icon slot="expand-icon" src={leaf.src}></sl-icon>
+            <sl-icon slot="collapse-icon" src={leaf.src}></sl-icon>
             <strong style="text-align: center;">Incoming Intern | 2025 </strong>
             <p>SpaceX</p>
             <ul>
@@ -78,12 +85,12 @@ import butterfly from '@/assets/butterfly.svg';
     </div>
 
     <div id="experience-container">
-        <sl-details summary="Leadership">
+        <sl-details summary="Garden">
             <div id="divider">
-                <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon> <br>
+                <sl-icon src={daisy.src}></sl-icon> <br>
             </div>
-            <sl-icon slot="expand-icon" src={butterfly.src}></sl-icon>
-            <sl-icon slot="collapse-icon" src={butterfly.src}></sl-icon>
+            <sl-icon slot="expand-icon" src={leaf.src}></sl-icon>
+            <sl-icon slot="collapse-icon" src={leaf.src}></sl-icon>
             <strong style="text-align: center;">Outreach & Social Committee Chair | 2023 - Present </strong>
             <p>Georgia Tech Student Competition Center</p>
             <ul>
@@ -127,8 +134,8 @@ import butterfly from '@/assets/butterfly.svg';
         text-align: center;
     }
     sl-tab-group {
-        --indicator-color: var(--sl-color-orange-300); 
-        --track-color: var(--sl-color-orange-100);
+        --indicator-color: var(--sl-color-success-300); 
+        --track-color: var(--sl-color-success-100);
         font-size: smaller;
     }
     sl-tab::part(base)  {
