@@ -1,0 +1,95 @@
+---
+import Layout from "@/layouts/Layout.astro";
+const { frontmatter } = Astro.props;
+import NoFooter from "@/layouts/NoFooter.astro";
+import { Image } from "astro:assets";
+---
+
+<NoFooter>
+    <div id="post-container">
+        <div id="post-wrapper">
+            <div id="post-content">
+                <sl-icon-button name="arrow-left-short" label="Settings" href="/v2_aesteri/blog"></sl-icon-button>
+
+                <div id = "header-post">
+                    <h1>{frontmatter.title}</h1>
+                    <sl-icon src="/v2_aesteri/favicon.svg"></sl-icon>
+                    <p>{frontmatter.pubDate.toString().slice(0,10)}</p>
+                    <p><em>{frontmatter.description}</em></p>
+                    <p>Written by: {frontmatter.author}</p>
+                    <Image
+                        slot="image"
+                        format="avif"
+                        quality={100}
+                        loading="eager"
+                        decoding="async"
+                        loading={"eager"}
+                        sizes="20px"
+                        style={{ width: '300px', height: 'auto' }}
+                        densities={[1, 2]}
+                        inferSize={true}
+                        src={frontmatter.image.url}
+                        alt={frontmatter.image.alt}
+                    />
+                    <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
+                </div>
+                
+                
+                <slot />
+            </div>
+        </div>
+    </div>
+</NoFooter>
+
+<style>
+    Image {
+        width: 300px;
+        height: auto;
+    }
+    #post-container {
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+
+    sl-icon-button {
+        padding-left: 30px;
+        font-size: 1.7rem;
+    }
+    sl-icon-button::part(base):hover  {
+        color: var(--sl-color-orange-100);
+    }
+    #post-wrapper {
+        overflow-y: auto;
+        justify-content: center;
+		align-items: center;
+    }
+    #post-content {
+        padding: 30px;
+    }
+    #header-post {
+        text-align: center;
+    }
+    @media screen and (min-width: 1536px) {
+        #post-content {
+            padding: 60px;
+        }
+        Image {
+            width: 500px;
+            height:auto;
+        }
+        
+    }
+    @media screen and (max-width: 767px) {
+        sl-icon-button {
+            padding: 0%;
+            font-size: 1.7rem;
+        }
+        Image {
+            width: 40%;
+            height:auto;
+        }
+    }
+</style>
+

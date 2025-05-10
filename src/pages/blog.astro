@@ -1,0 +1,124 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import NoFooter from "@/layouts/NoFooter.astro";
+import { Image } from "astro:assets";
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+---
+
+<NoFooter>
+    <div id="blog-container">
+        
+        <div id="wrapper-blog">
+            <h1>My Posts</h1>
+            <div class="posts-list"></div>
+                <ul>
+                    {allPosts.map((post: any) => (
+                        <sl-card class="card-overview">
+                            <Image
+                                slot="image"
+                                format="avif"
+                                quality={100}
+                                loading="eager"
+                                decoding="async"
+                                loading={"eager"}
+                                sizes="20px"
+                                style={{ width: '200', height: 'auto' }}
+                                densities={[1, 2]}
+                                inferSize={true}
+                                src={post.frontmatter.image.url}
+                                alt={post.frontmatter.image.alt}
+                            />
+
+                            <div slot="header">
+                                {post.frontmatter.title}
+                                <sl-animation name="flip" duration="2000" play>
+                                <sl-icon-button src="/v2_aesteri/favicon.svg" label="Settings" href={post.url}></sl-icon-button>
+                                </sl-animation>
+                            </div>
+                        
+                            {post.frontmatter.description}<br />
+                            <small><sl-relative-time date={post.frontmatter.pubDate}></sl-relative-time></small>
+                            <div slot="footer">
+                                {post.frontmatter.tags.map((tag: any) => (
+                                    <sl-badge >{tag}</sl-badge>
+                                ))}
+                            </div>
+                        </sl-card>
+                    )
+                    )}
+                </ul>
+            </div>
+        </div>
+    </div>
+</NoFooter>
+
+<style>
+    sl-badge::part(base)  {
+        background-color: var(--sl-color-orange-400);
+    }
+    h1 {
+        text-align: center;
+    }
+     #blog-container {
+        display:flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        
+    }
+    #wrapper-blog {
+        overflow-y: auto;
+    }
+    .posts-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card-overview [slot='footer'] {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .card-overview small {
+      color: var(--sl-color-neutral-500);
+    }
+
+    .card-overview {
+        max-width: 300px;
+        padding: 20px;
+    }
+
+    .card-overview [slot='header'] {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-overview h3 {
+        margin: 0;
+    }
+
+    .card-overview sl-icon-button {
+        font-size: var(--sl-font-size-medium);
+        color: var(--sl-color-orange-300);
+    }
+    .card-overview sl-icon-button::part(base):hover  {
+        color: var(--sl-color-orange-100);
+    }
+    @media screen and (min-width: 1536px) {
+        .posts-list{
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        }
+        .card-overview {
+            font-size: 2rem;
+            max-width: 500px;
+        }
+        Image {
+            width: auto;
+        }
+    }
+  </style>
