@@ -5,7 +5,7 @@ pubDate: 2025-05-07
 description: 'Describing my experience back in the motherland'
 author: 'Keziah'
 image:
-    url: 'https://raw.githubusercontent.com/aesteri/keziah-kang/refs/heads/main/src/assets/christine4.png'
+    url: 'https://raw.githubusercontent.com/aesteri/keziah-kang/refs/heads/main/src/assets/keziah3.jpg'
     alt: 'Christine in Everland'
 tags: ["Gardening", "Baking"]
 ---

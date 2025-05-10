@@ -1,8 +1,8 @@
 ---
+
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import Layout from '@/layouts/Layout.astro';
 import NoFooter from "@/layouts/NoFooter.astro";
 import { Image } from 'astro:assets';
 import daisy from '@/assets/daisy.svg';
@@ -36,19 +36,19 @@ projects.sort((a, b) => b.date.getTime() - a.date.getTime());
                   </sl-animation>
               </div>
               <Image
-                        slot="image"
-                        format="avif"
-                        quality={100}
-                        loading="eager"
-                        decoding="async"
-                        loading={"eager"}
-                        sizes="20px"
-                        style={{ width: '250', height: 'auto' }}
-                        densities={[1, 2]}
-                        inferSize={true}
-                        src={project.image.url}
-                        alt={project.image.alt}
-                    />
+                  slot="image"
+                  format="avif"
+                  quality={100}
+                  loading="eager"
+                  decoding="async"
+                  loading={"eager"}
+                  sizes="20px"
+                  style={{ width: '250', height: 'auto' }}
+                  densities={[1, 2]}
+                  inferSize={true}
+                  src={project.image.url}
+                  alt={project.image.alt}
+              />
               {project.description}
               
               <small>{project.date.toLocaleDateString()}</small>

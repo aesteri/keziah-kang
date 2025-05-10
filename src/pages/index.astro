@@ -1,9 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import yellowcar from '@/assets/yellowcar.png';
-import biker from '@/assets/biker.svg';
-
 
 ---
 <Layout>
@@ -17,11 +13,6 @@ import biker from '@/assets/biker.svg';
       <h4> Check out my blog posts and pictures ^^</h4>
       
     </div>
-    <!-- <div class="road">
-      <div class="lines"></div>
-      <Image src={biker} alt="Yellow car" class:list={['yellow', 'car']} loading={'eager'}/>
-      <Image src={biker} alt="Blue car" class:list={['blue', 'car']} loading={'eager'}/>
-    </div> -->
     <div class="wrap">
       <div class="base">
         <div class="flowerpot"></div>
@@ -36,8 +27,6 @@ import biker from '@/assets/biker.svg';
 </Layout>
 
 <style>
-  
-    /* @import 'https://fonts.googleapis.com/css?family=Bungee+Shade'; */
   :root { 
     --plant-border: #aad670;
     --plant-fill: #abe07a;
@@ -45,10 +34,10 @@ import biker from '@/assets/biker.svg';
     --flowerpot-color2: #d6c8a5;
   }
 
-
   h4 {
     font-weight: lighter;
   }
+
   #words {
     display: flex;
     justify-content: center;
@@ -57,6 +46,7 @@ import biker from '@/assets/biker.svg';
     padding: 30px;
     font-size: 30px;
   }
+
   *, *:after, *:before {
     box-sizing: border-box;
     margin: 0;
@@ -75,7 +65,6 @@ import biker from '@/assets/biker.svg';
 
   }
     
-
   .wrap {
     display: flex;
     align-items: center;
@@ -95,7 +84,6 @@ import biker from '@/assets/biker.svg';
     height:70px;
     overflow:hidden;
     background-image: linear-gradient(50deg, white 20px, white 21px, transparent 20px), linear-gradient(310deg, white 20px, var(--flowerpot-color1) 21px, var(--flowerpot-color1) 100%);
-
     
       &:after {
         content: " ";
@@ -269,95 +257,5 @@ import biker from '@/assets/biker.svg';
       transform: rotateZ(0deg) translateZ(-1px);
     }
   }
-  /* .road {
-    position: relative;
-  }
-  .up {
-    left: 100px;
-    top: 0;
-    opacity: .5;
-    animation-name: wind;
-    animation-duration: 60s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-    animation-direction: reverse;
-  }
-
-  .down {
-    width: 200px;
-    top: 50px; 
-    animation-name: wind;
-    animation-duration: 40s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-    animation-direction: reverse;
-  }
-
-
-  .road {
-    height: 30%;
-    background-color: rgb(122, 73, 32);
-    border-top: 10px solid rgba(0, 255, 21, 0.616);
-    boder-bottom: 10px solid rgba(119, 94, 10, 0.534);
-    width: 100%;
-  }
-
-  .lines {
-    border: 5px dashed #ffffff00;
-    height: 0px;
-    width: 100%;
-    position: absolute;
-    top: 45%; 
-  }
-
-  strong {
-    color: linear-gradient(rgb(180, 180, 180), rgb(156, 156, 156));
-  }
-
-  .car {
-    display: block;
-    max-width: 100%;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    left: 0;
-  }
-
-  .yellow {
-    top: -10px;
-    animation: drive 4s infinite ease-in-out, jump 0.3s 1.2s ease; 
-  }
-
-  .blue {
-    top: 45px;
-    animation-name: drive;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in;
-  }
-
-  @keyframes drive {
-    from { transform: translateX(-20vw) }
-    to { transform: translateX(120vw) }
-  }
-
-  @keyframes wind {
-    from { transform: translateX(-20vw) }
-    to { transform: translateX(120vw) }
-  }
-
-  @keyframes jump {
-    0%, 100% { top: 0px }
-    50% { top: -30px; }
-  }
-  @media screen and (max-width: 767px) {
-    .yellow {
-      top: -30px;
-      animation: drive 4s infinite ease-in-out, jump 0.3s 1.2s ease; 
-    }
-
-    .blue {
-      top: 10px;
-    }
-  } */
+  
 </style>
